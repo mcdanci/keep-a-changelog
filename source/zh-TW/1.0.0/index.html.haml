@@ -40,121 +40,108 @@ version: 1.0.0
     存檔更新日誌的緣由？
 
   %p
-    To make it easier for users and contributors to see precisely what
-    notable changes have been made between each release (or version) of
-    the project.
+    爲了讓使用者和開發人員更精準地明瞭項目的各個發佈版（或版本）間有何顯著變更。
 
   %h3#who
     %a.anchor{ href: "#who", aria_hidden: "true" }
-    Who needs a changelog?
+    更新日誌爲誰而設？
 
   %p
-    People do. Whether consumers or developers, the end users of
-    software are human beings who care about what's in the software. When
-    the software changes, people want to know why and how.
+    爲衆而生。無論是使用者還是開發人員，軟體的最終使用者或會在意軟體中含括了甚麼。
+    當軟體進行了變更，通常大夥都希望瞭解這個變更的緣由及其過程。
 
 .good-practices
   %h3#how
     %a.anchor{ href: "#how", aria_hidden: "true" }
-    How do I make a good changelog?
+    如何製作一份品質上乘的變更日誌？
 
   %h4#principles
     %a.anchor{ href: "#principles", aria_hidden: "true" }
-    Guiding Principles
+    指導方針
 
   %ul
     %li
-      Changelogs are <em>for humans</em>, not machines.
+      更新日誌是爲<em>人</em>而作，而非爲機器。
     %li
-      There should be an entry for every single version.
+      每個單獨的版本都應有且僅有一個條目。
     %li
-      The same types of changes should be grouped.
+      將同類型的變更組合在一起進行記錄。
     %li
-      Versions and sections should be linkable.
+      版本與章節間應可參照連結。
     %li
-      The latest version comes first.
+      新版在前。
     %li
-      The release date of each versions is displayed.
+      應羅列各個版本的發佈日期。
     %li
-      Mention whether you follow #{link_to "Semantic Versioning", semver}.
+      記載是否遵循#{link_to "語義化版本", semver}.
 
   %a.anchor{ href: "#types", aria_hidden: "true" }
-  %h4#types Types of changes
+  %h4#types 變更類型
 
   %ul
     %li
       %code Added
-      for new features.
+      新增的功能特性。
     %li
       %code Changed
-      for changes in existing functionality.
+      對現存功能的變更。
     %li
       %code Deprecated
-      for soon-to-be removed features.
+      不久便會被移除的功能特性。
     %li
       %code Removed
-      for now removed features.
+      如今移除的功能特性。
     %li
       %code Fixed
-      for any bug fixes.
+      缺陷修復。
     %li
       %code Security
-      in case of vulnerabilities.
+      預防軟件缺陷。
 
 .effort
 
   %h3#effort
     %a.anchor{ href: "#effort", aria_hidden: "true" }
-    How can I reduce the effort required to maintain a changelog?
+    如何才能合理地減少削減存檔變更日誌所需的精力？
 
   %p
-    Keep an <code>Unreleased</code> section at the top to track upcoming
-    changes.
+    將所追蹤的未來的變更保留附有 <code>Unreleased</code> 的頂部。
 
-  %p This serves two purposes:
+  %p 這將有兩方面的用處：
 
   %ul
     %li
-      People can see what changes they might expect in upcoming releases
+      未來的發佈版中被寄予希望的變更將公佈於衆；
     %li
-      At release time, you can move the <code>Unreleased</code> section
-      changes into a new release version section.
+      發佈時，將 <code>Unreleased</code> 部分變爲新的發佈版便可。
 
 .bad-practices
   %h3#bad-practices
     %a.anchor{ href: "#bad-practices", aria_hidden: "true" }
-    Can changelogs be bad?
+    變更日誌很爛？
 
-  %p Yes. Here are a few ways they can be less than useful.
+  %p 確實，有些情況可使得變更日誌變得似乎無甚功用。
 
   %h4#log-diffs
     %a.anchor{ href: "#log-diffs", aria_hidden: "true" }
-    Commit log diffs
+    將代碼差異日誌直接提交到變更日誌
 
   %p
-    Using commit log diffs as changelogs is a bad idea: they're full of
-    noise. Things like merge commits, commits with obscure titles,
-    documentation changes, etc.
+    將代碼差異日誌作爲變更日誌並不好：其干擾資訊過多。形如合併的提交、無題的提交和文檔變更之類……
 
   %p
-    The purpose of a commit is to document a step in the evolution of
-    the source code. Some projects clean up commits, some don't.
+    代碼提交的目的之一係記錄原始碼的每一次進化。然而存在有些項目並非如此。
 
   %p
-    The purpose of a changelog entry is to document the noteworthy
-    difference, often across multiple commits, to communicate them
-    clearly to end users.
+    變更日誌條目的功用係記錄顯著的差異以清晰地告知最終用戶，其所記錄通常跨多次提交。
 
   %h4#ignoring-deprecations
     %a.anchor{ href: "#ignoring-deprecations", aria_hidden: "true" }
-    Ignoring Deprecations
+    無視棄用項
 
   %p
-    When people upgrade from one version to another, it should be
-    painfully clear when something will break. It should be possible to
-    upgrade to a version that lists deprecations, remove what's
-    deprecated, then upgrade to the version where the deprecations
-    become removals.
+    當由某個版本升級至另一個版本時，某些得不到繼續的項應當被明瞭地告知無疑。
+    或許將被棄用項列出並作爲一個中間版本，以告知用戶後續升級將致棄用項，爾後再發佈可讓用戶升級至已不包含棄用項的版本。
 
   %p
     If you do nothing else, list deprecations, removals, and any
